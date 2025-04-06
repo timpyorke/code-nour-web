@@ -35,10 +35,6 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="outline" size="sm">
-              Login
-            </Button>
-            <Button size="sm">Get Started</Button>
           </div>
 
           <div className="flex md:hidden items-center space-x-4">
@@ -90,16 +86,6 @@ export default function Navbar() {
             >
               Contact
             </Link>
-          </div>
-          <div className="px-5 py-4 border-t">
-            <div className="flex flex-col space-y-3">
-              <Button variant="outline" className="w-full" size="sm">
-                Login
-              </Button>
-              <Button className="w-full" size="sm">
-                Get Started
-              </Button>
-            </div>
           </div>
         </div>
       )}
