@@ -1,97 +1,129 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Code2, Users, Award, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <div className="relative min-h-[600px] bg-gradient-to-r from-primary/90 to-primary">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')] bg-cover bg-center mix-blend-overlay"></div>
-        <div className="container mx-auto px-4 py-16 md:py-32 relative">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 max-w-[800px]">
-            Transform Your Digital Vision Into Reality
+    <main>
+      {/* Navigation */}
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-sm">
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="text-lg font-medium">Code Nour</div>
+          <div className="flex gap-8 text-sm">
+            <a href="#work" className="hover:text-gray-600 transition-colors">Work</a>
+            <a href="#services" className="hover:text-gray-600 transition-colors">Services</a>
+            <a href="#contact" className="hover:text-gray-600 transition-colors">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section className="min-h-screen flex items-center justify-center px-6">
+        <div className="text-center max-w-4xl">
+          <div className="mb-8">
+            <div className="w-80 h-80 mx-auto bg-gray-100 rounded-2xl mb-8 flex items-center justify-center">
+              <div className="text-6xl">⚡</div>
+            </div>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+            Software<br />that works
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
-            We craft innovative software solutions that empower businesses to thrive in the digital age. From custom development to enterprise solutions.
+          <p className="text-xl text-gray-600 mb-12">
+            We build tools that solve real problems.
           </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-            Get Started <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <button className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-colors">
+            Start project
+          </button>
         </div>
-      </div>
+      </section>
 
-      {/* Stats Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <Card className="p-6 text-center">
-            <h3 className="text-4xl font-bold text-primary mb-2">500+</h3>
-            <p className="text-muted-foreground">Projects Delivered</p>
-          </Card>
-          <Card className="p-6 text-center">
-            <h3 className="text-4xl font-bold text-primary mb-2">50M+</h3>
-            <p className="text-muted-foreground">Lines of Code</p>
-          </Card>
-          <Card className="p-6 text-center">
-            <h3 className="text-4xl font-bold text-primary mb-2">99%</h3>
-            <p className="text-muted-foreground">Client Satisfaction</p>
-          </Card>
+      {/* Feature 1 */}
+      <section className="min-h-screen flex items-center px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              Custom built
+            </h2>
+            <p className="text-xl text-gray-600">
+              Every line of code crafted for your specific needs.
+            </p>
+          </div>
+          <div className="bg-gray-50 aspect-square rounded-3xl flex items-center justify-center">
+            <div className="text-8xl">🔧</div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Services Section */}
-      <div className="bg-muted py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Solutions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <Card className="p-6">
-              <Code2 className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Custom Development</h3>
-              <p className="text-muted-foreground">
-                Tailored software solutions built to address your unique business challenges.
-              </p>
-            </Card>
-            <Card className="p-6">
-              <Users className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Enterprise Solutions</h3>
-              <p className="text-muted-foreground">
-                Scalable enterprise applications that streamline operations and boost productivity.
-              </p>
-            </Card>
-            <Card className="p-6">
-              <Award className="h-12 w-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Digital Transformation</h3>
-              <p className="text-muted-foreground">
-                Strategic guidance and implementation to modernize your business.
-              </p>
-            </Card>
+      {/* Feature 2 */}
+      <section className="min-h-screen flex items-center px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="bg-gray-50 aspect-square rounded-3xl flex items-center justify-center lg:order-first">
+            <div className="text-8xl">⚡</div>
+          </div>
+          <div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              Lightning fast
+            </h2>
+            <p className="text-xl text-gray-600">
+              Performance-first architecture that scales.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Contact Section */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Let's Connect</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="flex flex-col items-center text-center">
-            <Mail className="h-8 w-8 text-primary mb-4" />
-            <h3 className="font-semibold mb-2">Email</h3>
-            <p className="text-muted-foreground">contact@codenour.com</p>
+      {/* Feature 3 */}
+      <section className="min-h-screen flex items-center px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              Always reliable
+            </h2>
+            <p className="text-xl text-gray-600">
+              Built to work, tested to last.
+            </p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <Phone className="h-8 w-8 text-primary mb-4" />
-            <h3 className="font-semibold mb-2">Phone</h3>
-            <p className="text-muted-foreground">(555) 123-4567</p>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <MapPin className="h-8 w-8 text-primary mb-4" />
-            <h3 className="font-semibold mb-2">Address</h3>
-            <p className="text-muted-foreground">123 Tech Street, Silicon Valley, CA</p>
+          <div className="bg-gray-50 aspect-square rounded-3xl flex items-center justify-center">
+            <div className="text-8xl">🛡️</div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-16">
+            What we build
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+            <div>
+              <h3 className="text-xl font-medium mb-3">Web Applications</h3>
+              <p className="text-gray-600">Modern, responsive web apps</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-3">APIs & Backend</h3>
+              <p className="text-gray-600">Robust server infrastructure</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-3">Mobile Apps</h3>
+              <p className="text-gray-600">Native and cross-platform</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-8">
+            Ready to start?
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Let's discuss your project.
+          </p>
+          <a
+            href="mailto:hello@codenour.com"
+            className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-colors inline-block"
+          >
+            Get in touch
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
