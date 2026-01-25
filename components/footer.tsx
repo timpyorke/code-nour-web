@@ -1,17 +1,16 @@
-const footerLinks = {
-  products: [
-    { name: 'Find Parking', href: '#products' },
-    { name: 'Image Converter', href: '#products' },
-    { name: 'Cozy Sound', href: '#products' },
-    { name: 'Financial Planning', href: '#products' },
-  ],
-  legal: [
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
-};
+import { getProducts } from '@/lib/products';
 
 export function Footer() {
+  const products = getProducts().slice(0, 5);
+
+  const footerLinks = {
+    products: products.map(p => ({ name: p.title, href: '/#products' })),
+    legal: [
+      { name: 'Privacy', href: '/privacy' },
+      { name: 'Terms', href: '/terms' },
+    ],
+  };
+
   return (
     <footer id="contact" className="bg-white border-t border-gray-100 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16">

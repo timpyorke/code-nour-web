@@ -21,7 +21,7 @@ export function ProductCard({ product }: ProductCardProps) {
     >
       <div
         className={`h-56 bg-gradient-to-br ${gradient.from} ${gradient.to} relative overflow-hidden transition-all duration-300 ${gradient.hoverFrom} ${gradient.hoverTo} ${isMoreCard ? 'flex items-center justify-center' : ''
-          }`}
+          } flex-shrink-0`}
       >
         {isMoreCard ? (
           <div className="text-center">
@@ -34,12 +34,12 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
       </div>
-      <div className="p-8 flex flex-col">
-        <div>
+      <div className="p-8 flex flex-col flex-grow justify-end">
+        <div className="mb-4">
           <h3 className="text-2xl font-light mb-2">{title}</h3>
           <p className="text-gray-600">{description}</p>
         </div>
-        <div className="pt-4 mt-4 border-t border-gray-100 flex justify-between items-center gap-3">
+        <div className="pt-4 border-t border-gray-100 flex justify-between items-center gap-3">
           <div className="flex flex-wrap gap-2">
             {tags && tags.length > 0 && tags.map((tag) => (
               <span
