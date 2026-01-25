@@ -8,8 +8,7 @@ gradient:
   hoverFrom: group-hover:from-purple-100
   hoverTo: group-hover:to-purple-200
 colSpan: 2
-buttonVariant: primary
-buttonText: Download
+primaryButtonText: Download
 isVisible: true
 tags:
   - android

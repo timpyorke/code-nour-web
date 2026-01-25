@@ -4,23 +4,52 @@ interface ProductCardProps {
   product: Product;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
-  const { title, description, icon, gradient, colSpan, buttonVariant, buttonText, tags, url } = product;
+interface ButtonProps {
+  text: string;
+  url?: string;
+  variant: 'primary' | 'secondary';
+}
 
-  const buttonClasses =
-    buttonVariant === 'primary'
-      ? 'bg-black text-white hover:bg-gray-800'
-      : 'bg-gray-100 text-gray-900 hover:bg-gray-200';
+function ActionButton({ text, url, variant }: ButtonProps) {
+  const baseClasses = 'px-6 py-3 rounded-full text-sm transition-colors';
+  const variantClasses = variant === 'primary'
+    ? 'bg-black text-white hover:bg-gray-800'
+    : 'bg-gray-100 text-gray-900 hover:bg-gray-200';
+
+  const className = `${variantClasses} ${baseClasses}`;
+
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {text}
+      </a>
+    );
+  }
+
+  return (
+    <button className={className} aria-disabled>
+      {text}
+    </button>
+  );
+}
+
+export function ProductCard({ product }: ProductCardProps) {
+  const { title, description, icon, gradient, colSpan, primaryButtonText, primaryButtonUrl, secondaryButtonText, secondaryButtonUrl, tags } = product;
 
   const colSpanClass = colSpan === 2 ? 'md:col-span-2' : 'md:col-span-1';
   const isMoreCard = icon === '+';
 
   return (
     <div
-      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[320px]`}
+      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[480px]`}
     >
       <div
-        className={`h-56 bg-gradient-to-br ${gradient.from} ${gradient.to} relative overflow-hidden transition-all duration-300 ${gradient.hoverFrom} ${gradient.hoverTo} ${isMoreCard ? 'flex items-center justify-center' : ''
+        className={`h-64 bg-gradient-to-br ${gradient.from} ${gradient.to} relative overflow-hidden transition-all duration-300 ${gradient.hoverFrom} ${gradient.hoverTo} ${isMoreCard ? 'flex items-center justify-center' : ''
           } flex-shrink-0`}
       >
         {isMoreCard ? (
@@ -50,25 +79,25 @@ export function ProductCard({ product }: ProductCardProps) {
               </span>
             ))}
           </div>
-          {url ? (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${buttonClasses} px-6 py-3 rounded-full text-sm transition-colors flex-shrink-0`}
-            >
-              {buttonText}
-            </a>
-          ) : (
-            <button
-              className={`${buttonClasses} px-6 py-3 rounded-full text-sm transition-colors flex-shrink-0`}
-              aria-disabled
-            >
-              {buttonText}
-            </button>
-          )}
+          <div className="flex gap-2 flex-shrink-0">
+            {secondaryButtonText && (
+              <ActionButton
+                text={secondaryButtonText}
+                url={secondaryButtonUrl}
+                variant="secondary"
+              />
+            )}
+            {primaryButtonText && (
+              <ActionButton
+                text={primaryButtonText}
+                url={primaryButtonUrl}
+                variant="primary"
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
