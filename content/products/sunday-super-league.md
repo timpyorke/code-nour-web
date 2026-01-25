@@ -8,8 +8,7 @@ gradient:
   hoverFrom: group-hover:from-red-100
   hoverTo: group-hover:to-red-200
 colSpan: 1
-buttonVariant: primary
-buttonText: Download
+primaryButtonText: Download
 isVisible: false
 tags:
   - game

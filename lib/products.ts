@@ -10,11 +10,12 @@ export interface Product {
     hoverTo: string;
   };
   colSpan: 1 | 2;
-  buttonVariant: "primary" | "secondary";
-  buttonText: string;
+  primaryButtonText?: string;
+  primaryButtonUrl?: string;
+  secondaryButtonText?: string;
+  secondaryButtonUrl?: string;
   tags?: string[];
   isVisible?: boolean;
-  url?: string;
 }
 
 import fs from "fs";
@@ -35,7 +36,7 @@ export function getProducts(): Product[] {
 
     const product: Product = {
       id: data.id,
-      title: data.title,
+      title: data.title || "",
       description: (content || "").trim(),
       icon: data.icon,
       gradient: {
@@ -45,11 +46,12 @@ export function getProducts(): Product[] {
         hoverTo: data.gradient?.hoverTo,
       },
       colSpan: data.colSpan,
-      buttonVariant: data.buttonVariant,
-      buttonText: data.buttonText,
+      primaryButtonText: data.primaryButtonText,
+      primaryButtonUrl: data.primaryButtonUrl,
+      secondaryButtonText: data.secondaryButtonText,
+      secondaryButtonUrl: data.secondaryButtonUrl,
       tags: Array.isArray(data.tags) ? data.tags : [],
       isVisible: typeof data.isVisible === "boolean" ? data.isVisible : true,
-      url: typeof data.url === "string" ? data.url : undefined,
     };
 
     return product;
@@ -84,10 +86,11 @@ export function getProductById(id: string): Product | null {
       hoverTo: data.gradient?.hoverTo,
     },
     colSpan: data.colSpan,
-    buttonVariant: data.buttonVariant,
-    buttonText: data.buttonText,
+    primaryButtonText: data.primaryButtonText,
+    primaryButtonUrl: data.primaryButtonUrl,
+    secondaryButtonText: data.secondaryButtonText,
+    secondaryButtonUrl: data.secondaryButtonUrl,
     tags: Array.isArray(data.tags) ? data.tags : [],
     isVisible: typeof data.isVisible === "boolean" ? data.isVisible : true,
-    url: typeof data.url === "string" ? data.url : undefined,
   };
 }

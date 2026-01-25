@@ -8,8 +8,8 @@ gradient:
   hoverFrom: group-hover:from-gray-100
   hoverTo: group-hover:to-gray-200
 colSpan: 1
-buttonVariant: secondary
-buttonText: View all
+
+secondaryButtonText: View all
 isVisible: true
 tags: []
 ---

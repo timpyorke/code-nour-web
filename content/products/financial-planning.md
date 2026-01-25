@@ -8,8 +8,7 @@ gradient:
   hoverFrom: group-hover:from-orange-100
   hoverTo: group-hover:to-orange-200
 colSpan: 2
-buttonVariant: primary
-buttonText: Download
+primaryButtonText: Download
 isVisible: false
 tags:
   - web

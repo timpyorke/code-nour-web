@@ -8,10 +8,11 @@ gradient:
   hoverFrom: group-hover:from-indigo-100
   hoverTo: group-hover:to-indigo-200
 colSpan: 1
-buttonVariant: primary
-buttonText: Open
+primaryButtonText: Open
+primaryButtonUrl: https://rub-tung.vercel.app/
+secondaryButtonText: GitHub
+secondaryButtonUrl: https://github.com/timpyorke/code-nour-web
 isVisible: true
-url: https://rub-tung.vercel.app/
 tags:
   - web
   - api
