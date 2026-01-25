@@ -45,7 +45,7 @@ export function Footer() {
                   href="mailto:codenour@gmail.com"
                   className="hover:text-gray-900 transition-colors"
                 >
-                  codenour@gmail.com
+                  codenour.dev@gmail.com
                 </a>
               </li>
             </ul>

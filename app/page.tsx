@@ -1,9 +1,10 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { ProductCard } from '@/components/product-card';
-import { products } from '@/lib/products';
+import { getProducts } from '@/lib/products';
 
 export default function Home() {
+  const products = getProducts();
   return (
     <main className="scroll-smooth">
       <Header />
@@ -22,6 +23,7 @@ export default function Home() {
 
       {/* Products Section */}
       <section id="products" className="py-24 px-6 bg-gray-50 scroll-mt-20">
+        <h1 className="text-3xl font-semibold mb-12 text-center">Our Products</h1>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products.map((product) => (
