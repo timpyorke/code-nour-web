@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Code Nour',
   description: 'Software that works.',
+  icons: {
+    icon: '/codenour_en.png',
+  },
 };
 
 export default function RootLayout({
