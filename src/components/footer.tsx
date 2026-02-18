@@ -54,7 +54,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Code Nour. All rights reserved.
+            © 2026 Code Nour. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
             {footerLinks.legal.map((link) => (

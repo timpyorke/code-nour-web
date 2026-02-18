@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Product } from '@/lib/products';
 
 interface ProductCardProps {
@@ -46,8 +47,15 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[480px]`}
+      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[480px] relative`}
     >
+      {!isMoreCard && (
+        <Link
+          href={`/products/${product.id}`}
+          className="absolute inset-0 z-0"
+          aria-label={`View ${title} details`}
+        />
+      )}
       <div
         className={`h-64 bg-gradient-to-br ${gradient.from} ${gradient.to} relative overflow-hidden transition-all duration-300 ${gradient.hoverFrom} ${gradient.hoverTo} ${isMoreCard ? 'flex items-center justify-center' : ''
           } flex-shrink-0`}
@@ -68,7 +76,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <h3 className="text-2xl font-light mb-2">{title}</h3>
           <p className="text-gray-600">{description}</p>
         </div>
-        <div className="pt-4 border-t border-gray-100 flex justify-between items-center gap-3">
+        <div className="pt-4 border-t border-gray-100 flex justify-between items-center gap-3 relative z-10">
           <div className="flex flex-wrap gap-2">
             {tags && tags.length > 0 && tags.map((tag) => (
               <span

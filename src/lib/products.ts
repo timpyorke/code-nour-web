@@ -3,6 +3,7 @@ export interface Product {
   title: string;
   description: string;
   icon: string;
+  coverImage?: string;
   gradient: {
     from: string;
     to: string;
@@ -16,6 +17,8 @@ export interface Product {
   secondaryButtonUrl?: string;
   tags?: string[];
   isVisible?: boolean;
+  screenshots?: string[];
+  privacyPolicy?: string;
 }
 
 import fs from "fs";
@@ -69,6 +72,14 @@ export function getProducts(): Product[] {
   return visible;
 }
 
+export function getAllProductIds(): string[] {
+  if (!fs.existsSync(CONTENT_DIR)) return [];
+  return fs
+    .readdirSync(CONTENT_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.replace(".md", ""));
+}
+
 export function getProductById(id: string): Product | null {
   const filePath = path.join(CONTENT_DIR, `${id}.md`);
   if (!fs.existsSync(filePath)) return null;
@@ -79,6 +90,7 @@ export function getProductById(id: string): Product | null {
     title: data.title,
     description: (content || "").trim(),
     icon: data.icon,
+    coverImage: data.coverImage,
     gradient: {
       from: data.gradient?.from,
       to: data.gradient?.to,
@@ -92,5 +104,7 @@ export function getProductById(id: string): Product | null {
     secondaryButtonUrl: data.secondaryButtonUrl,
     tags: Array.isArray(data.tags) ? data.tags : [],
     isVisible: typeof data.isVisible === "boolean" ? data.isVisible : true,
+    screenshots: Array.isArray(data.screenshots) ? data.screenshots : [],
+    privacyPolicy: data.privacyPolicy || "",
   };
 }
