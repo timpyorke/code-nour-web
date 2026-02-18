@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Product } from '@/lib/products';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -17,8 +17,28 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'privacy-policy', label: 'Privacy Policy' },
 ];
 
+const VALID_TABS = new Set<Tab>(['overview', 'screenshot', 'privacy-policy']);
+
+function hashToTab(hash: string): Tab {
+  const id = hash.replace('#', '') as Tab;
+  return VALID_TABS.has(id) ? id : 'overview';
+}
+
 export function ProductDetailTabs({ product }: ProductDetailTabsProps) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
+
+  useEffect(() => {
+    setActiveTab(hashToTab(window.location.hash));
+
+    const onHashChange = () => setActiveTab(hashToTab(window.location.hash));
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  function switchTab(tab: Tab) {
+    history.pushState(null, '', `#${tab}`);
+    setActiveTab(tab);
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-6 pb-24">
@@ -28,7 +48,7 @@ export function ProductDetailTabs({ product }: ProductDetailTabsProps) {
           {TABS.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => switchTab(tab.id)}
               className={`px-6 py-4 text-sm font-medium transition-colors border-b-2 -mb-px ${
                 activeTab === tab.id
                   ? 'border-black text-black'
@@ -43,7 +63,7 @@ export function ProductDetailTabs({ product }: ProductDetailTabsProps) {
 
       {/* Overview */}
       {activeTab === 'overview' && (
-        <div className="prose prose-gray max-w-none prose-headings:font-light prose-p:text-gray-600 prose-p:leading-relaxed prose-ul:my-6 prose-li:my-2">
+        <div className="prose prose-gray max-w-none prose-headings:font-light prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-black prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-ul:text-gray-600 prose-ol:text-gray-600 prose-li:my-1 prose-blockquote:border-l-gray-300 prose-blockquote:text-gray-500 prose-code:text-gray-800 prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded prose-hr:border-gray-200">
           {product.description ? (
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{product.description}</ReactMarkdown>
           ) : (
@@ -82,7 +102,7 @@ export function ProductDetailTabs({ product }: ProductDetailTabsProps) {
 
       {/* Privacy Policy */}
       {activeTab === 'privacy-policy' && (
-        <div className="prose prose-gray max-w-none prose-headings:font-light prose-h1:text-4xl prose-h2:text-2xl prose-h2:mt-10 prose-p:text-gray-600 prose-p:leading-relaxed prose-ul:my-6 prose-li:my-2 prose-strong:text-gray-900 prose-strong:font-medium prose-hr:my-8">
+        <div className="prose prose-gray max-w-none prose-headings:font-light prose-headings:text-gray-900 prose-h1:text-3xl prose-h1:mb-2 prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-base prose-h3:mt-6 prose-h3:mb-2 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-black prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-ul:text-gray-600 prose-ol:text-gray-600 prose-li:my-1 prose-blockquote:border-l-gray-300 prose-blockquote:text-gray-500 prose-hr:border-gray-200 prose-hr:my-8">
           {product.privacyPolicy ? (
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{product.privacyPolicy}</ReactMarkdown>
           ) : (
