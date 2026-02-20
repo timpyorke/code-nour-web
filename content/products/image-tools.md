@@ -1,6 +1,6 @@
 ---
-id: image-converter
-title: Image Converter
+id: image-tools
+title: Image Tools
 icon: "🖼️"
 gradient:
   from: from-purple-50
