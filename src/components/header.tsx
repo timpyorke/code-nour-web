@@ -8,6 +8,9 @@ export function Header() {
           Code Nour
         </a>
         <div className="flex items-center gap-8 text-base font-medium">
+          <a href="/" className="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors">
+            Home
+          </a>
           <a href="/products" className="px-4 py-2 rounded-full hover:bg-gray-100 transition-colors">
             Products
           </a>
