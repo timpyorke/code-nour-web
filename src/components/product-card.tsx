@@ -47,7 +47,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[480px] relative`}
+      className={`${colSpanClass} bg-white rounded-3xl overflow-hidden group transform transition-all duration-300 border-2 border-gray-100 hover:border-gray-200 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 flex flex-col min-h-[480px] relative`}
     >
       {!isMoreCard && (
         <Link
