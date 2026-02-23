@@ -2,35 +2,44 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { ProductCard } from '@/components/product-card';
 import { getProducts } from '@/lib/products';
+import { getSectionById } from '@/lib/sections';
 
 export default function Home() {
   const products = getProducts();
+  const hero = getSectionById('hero');
+  const productsSection = getSectionById('products');
+
   return (
     <main className="scroll-smooth">
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-24 px-6 min-h-[60vh] flex items-center justify-center">
+      <section className="relative pt-32 pb-24 px-6 min-h-[100vh] flex items-center justify-center">
         <div className="text-center max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
-            Software for everyone
+          <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-tight">
+            {hero?.title}
           </h1>
           <p className="text-xl text-gray-600 mb-12">
-            Powerful apps that amplify your.
+            {hero?.subtitle}
           </p>
         </div>
-      </section>
 
-      {/* Products Section */}
-      <section id="products" className="py-24 px-6 bg-gray-50 scroll-mt-20">
-        <h1 className="text-3xl font-semibold mb-12 text-center">Our Products</h1>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
+        {/* Animated Scroll Down Indicator */}
+        <a
+          href="/products"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-gray-400 hover:text-black transition-colors animate-bounce p-4"
+          aria-label="View our products"
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
       </section>
 
       <Footer />

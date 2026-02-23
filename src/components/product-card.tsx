@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
     >
       {!isMoreCard && (
         <Link
-          href={`/products/${product.id}`}
+          href={`/product/${product.id}`}
           className="absolute inset-0 z-0"
           aria-label={`View ${title} details`}
         />

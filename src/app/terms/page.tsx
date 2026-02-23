@@ -1,20 +1,12 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getPageBySlug } from '@/lib/pages';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-function getTermsContent() {
-    const filePath = path.join(process.cwd(), 'content', 'terms.md');
-    const raw = fs.readFileSync(filePath, 'utf8');
-    const { content } = matter(raw);
-    return content;
-}
-
 export default function TermsPage() {
-    const content = getTermsContent();
+    const page = getPageBySlug('terms');
+    const content = page?.content ?? '';
 
     return (
         <main className="scroll-smooth">
