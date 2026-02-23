@@ -25,21 +25,23 @@ export default function Home() {
         </div>
 
         {/* Animated Scroll Down Indicator */}
-        <a
-          href="/products"
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-gray-400 hover:text-black transition-colors animate-bounce p-4"
-          aria-label="View our products"
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="absolute inset-x-0 bottom-12 flex justify-center">
+          <a
+            href="/products"
+            className="text-gray-400 hover:text-black transition-colors animate-bounce p-4"
+            aria-label="View our products"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
       </section>
 
       {/* Philosophy Section */}
