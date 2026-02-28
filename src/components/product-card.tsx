@@ -40,7 +40,7 @@ function ActionButton({ text, url, variant }: ButtonProps) {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const { title, description, icon, gradient, colSpan, primaryButtonText, primaryButtonUrl, secondaryButtonText, secondaryButtonUrl, tags } = product;
+  const { title, description, shortDescription, icon, gradient, colSpan, primaryButtonText, primaryButtonUrl, secondaryButtonText, secondaryButtonUrl, tags } = product;
 
   const colSpanClass = colSpan === 2 ? 'md:col-span-2' : 'md:col-span-1';
   const isMoreCard = icon === '+';
@@ -74,7 +74,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="p-8 flex flex-col flex-grow justify-end">
         <div className="mb-4">
           <h3 className="text-2xl font-light mb-2">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <p className="text-gray-600 line-clamp-2">{shortDescription || description}</p>
         </div>
         <div className="pt-4 border-t border-gray-100 flex justify-between items-center gap-3 relative z-10">
           <div className="flex flex-wrap gap-2">

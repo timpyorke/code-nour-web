@@ -2,6 +2,7 @@
 id: image-tools
 title: Image Tools
 icon: "🖼️"
+shortDescription: Convert, resize & crop images. Supports JPG, PNG, WebP, HEIC/HEIF & more!
 gradient:
   from: from-purple-50
   to: to-purple-100
@@ -13,7 +14,11 @@ isVisible: true
 tags:
   - android
   - ios
-screenshots: []
+screenshots:
+  - /images/products/image-tools/convert.png
+  - /images/products/image-tools/resize.png
+  - /images/products/image-tools/crop.png
+  - /images/products/image-tools/collect.png
 privacyPolicy: |
   # Privacy Policy for Image Tools
 
@@ -190,4 +195,101 @@ privacyPolicy: |
   - You control photo access permissions
 ---
 
-Convert any image format instantly. Supports JPEG, PNG, WebP, HEIC, and more — all processed on your device with no uploads required.
+Transform your images with ease! Image Tools is a powerful, privacy-focused app for converting, resizing, and cropping photos — all on your device.
+
+🎯 KEY FEATURES
+
+📸 **Universal Image Converter**
+• Convert between popular formats: JPG, PNG, WebP, BMP, TIFF
+• HEIC/HEIF support: Convert iPhone photos to universal formats
+• Batch processing: Convert multiple images at once
+• Maintain quality: Choose compression levels that work for you
+
+📏 **Smart Resize**
+• Preset sizes: Instagram, Facebook, Twitter, LinkedIn
+• Custom dimensions: Set exact width and height
+• Maintain aspect ratio: Prevent distortion
+• Percentage scaling: Resize by 50%, 75%, 200%, etc.
+
+✂️ **Precision Crop**
+• Popular aspect ratios: 1:1, 4:3, 16:9, 9:16, and more
+• Free crop: Select any area
+• Preview before saving: See exactly what you'll get
+
+⚡ **BENEFITS**
+
+✓ 100% Offline: Works without internet connection
+✓ Privacy First: Images never leave your device
+✓ Lightning Fast: Process images in seconds
+✓ Free to Use: No subscriptions or hidden fees
+✓ Multi-language: Available in 10+ languages
+✓ Ad-Supported: Support development with optional ads
+
+🌍 **SUPPORTED LANGUAGES**
+
+English, Spanish, French, German, Italian, Portuguese, Russian, Japanese, Korean, Thai, Vietnamese, Indonesian, and more!
+
+📱 **PERFECT FOR**
+
+• Converting HEIC photos from iPhone to JPG
+• Resizing images for social media
+• Reducing file sizes for email attachments
+• Preparing photos for websites and blogs
+• Batch editing multiple images
+• Quick photo crops without complex editors
+
+🔒 **YOUR PRIVACY MATTERS**
+
+• No cloud uploads: Everything stays on your device
+• No account required: Start using immediately
+• No data collection: We don't track your photos
+• Open photo permissions: Only when you choose to select images
+
+💡 **HOW IT WORKS**
+
+1. Select images from your gallery
+2. Choose your action: Convert, Resize, or Crop
+3. Adjust settings to your preference
+4. Save to your device — done!
+
+🎨 **CLEAN & INTUITIVE DESIGN**
+
+• Modern material design interface
+• Dark mode support
+• Simple navigation
+• Clear, easy-to-understand options
+• No confusing menus or hidden features
+
+📊 **USE CASES**
+
+• **Photographers:** Quick batch conversions for clients
+• **Social Media Managers:** Resize images for different platforms
+• **Bloggers:** Optimize images for faster website loading
+• **Students:** Prepare images for presentations and projects
+• **Everyone:** Simple tool for everyday photo needs
+
+🆓 **FREE & POWERFUL**
+
+Image Tools is completely free with optional ads. No premium tiers, no locked features, no subscriptions. Just a straightforward image tool that works.
+
+⭐ **WHAT USERS ARE SAYING**
+
+"Simple, fast, and does exactly what I need!"
+"Finally, an image converter that respects my privacy."
+"Converting HEIC to JPG has never been easier!"
+
+📥 **Download Image Tools today and take control of your image editing!**
+
+---
+
+🛠️ **TECHNICAL DETAILS**
+
+• Formats supported: JPG, PNG, WebP, HEIC, HEIF, BMP, TIFF
+• Works on Android 5.0 and above
+• Optimized for phones and tablets
+• Small app size (< 50MB)
+• Battery efficient
+
+📧 **SUPPORT**
+
+Have questions or feedback? Contact us at support@codenour.com
